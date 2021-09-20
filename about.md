@@ -8,7 +8,7 @@ I am a university student completing my bachelor of science in cyber security. I
 
 Subscribe to the RSS Feed for updates and notifications. Reach out to me on social media or email; I am friendly :) 
 
-## Social Accounts
+## Social Media
 - [Github](https://github.com/avrha)
 - [Linkedin](https://www.linkedin.com/in/joey-ferenchak)
 - [Twitter](https://twitter.com/Joey_Ferenchak)

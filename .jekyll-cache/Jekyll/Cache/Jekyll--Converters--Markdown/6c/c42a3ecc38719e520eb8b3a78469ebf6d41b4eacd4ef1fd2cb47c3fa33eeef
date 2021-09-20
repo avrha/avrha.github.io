@@ -1,0 +1,5 @@
+I"Ü<p>Linuxâ€™s filesystem confuses many n00bs at first, but is not complicated once learned. Knowing how and where system data is handled helps one understand the OS internals. While there is plenty of resources that go into great</p>
+
+<h2 id="what-is-fhs">What is FHS?</h2>
+<p>FHS stands for Filesystem Hierarchy Standard and defines the directory structure in Linux distributions. In other words, FHS defines how files and folders are arranged in Linux operating systems.</p>
+:ET
