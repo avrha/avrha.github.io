@@ -29,7 +29,7 @@ Initially, the structure Linux uses for its filesystem is intimidating. When bro
 - Common linux commands (ls,ping,cp) are stored here.
 
 ## /sbin
-``` /sbin ``` stores system administration binaries.
+``` /sbin ``` stores essential command binaries for system administration.
 - Similiar to ``` /bin ```, ``` /sbin ``` contains binary excutables necessary for system administration. 
 - Common sysadmin commands (iptables, fdisk, ifconfig) are stored here.
 
