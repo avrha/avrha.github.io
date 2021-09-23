@@ -80,7 +80,7 @@ Initially, the structure Linux uses for its filesystem is intimidating. When bro
 
 Listing out ``` /proc ``` content with ``` ls -l ``` displays each PID (Process Identifier) for every process currently running. 
 
-Information about a running process is in file inside a directory named after their PID. For example, information about systemd's process status is in the directory ``` /proc/1 ``` (systemd PID) and shown in the file ``` /proc/1/status ```.
+Information about a running process is found in a file inside a directory named after the PID. For example, information about systemd's process status is in the directory ``` /proc/1 ``` (systemd PID) and shown in the file ``` /proc/1/status ```.
 
 Unlike processes, system resource files are not stored in subdirectories. All are found in ```/proc ```. For example, information about installed cryptographic ciphers used by the Kernel is found in the file ``` /proc/crypto ```. 
 
