@@ -1,0 +1,143 @@
+I"�&<p>The Linux filesystem confuses many n00bs at first but is not complicated once learned. Knowing how and where system data is stored helps one understand the Linux internals. Detailed resources about the Linux FHS exist, but my post explains the essential aspects simply.</p>
+
+<h2 id="what-is-fhs">What is FHS?</h2>
+<p>FHS stands for Filesystem Hierarchy Standard and defines the directory structure in Linux distributions. In other words, FHS defines how files and directories become arranged in Linux operating systems.</p>
+
+<h2 id="directory-structure">Directory Structure</h2>
+<p>In the FHS, all files and directories appear under the root directory <code class="language-plaintext highlighter-rouge">/</code>, even if they are store on different physical or virtual devices. Seen in the figure below is a typical Ubuntu filesystem hierarchy. The directories listed generally exist in all UNIX systems and are used the same way.</p>
+
+<p><img src="photos/FHS/FHS-root.png" alt="Ubuntu Filesystem Hierarchy" /></p>
+
+<p>Initially, the structure Linux uses for its filesystem is intimidating. When broken down and explained, it is easy to understand and remember.</p>
+
+<h2 id="-root">/ (Root)</h2>
+<p><code class="language-plaintext highlighter-rouge">/</code> is the primary hierarchy root and root directory of the entire file system hierarchy.</p>
+
+<ul>
+  <li>Every single file and directory starts from the root directory.</li>
+  <li>Only the root user (admin) has the right to write under the root directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">/root</code> is the root user’s home directory, which is not the same as <code class="language-plaintext highlighter-rouge">/</code>.</li>
+</ul>
+
+<h2 id="bin">/bin</h2>
+<p><code class="language-plaintext highlighter-rouge">/bin</code> stores essential command binaries needed in single-user mode to attain minimal functionality for booting and repairing a system.</p>
+<ul>
+  <li>Contains binary executables.</li>
+  <li>Common linux commands (ls,ping,cp) are stored here.</li>
+</ul>
+
+<h2 id="sbin">/sbin</h2>
+<p><code class="language-plaintext highlighter-rouge">/sbin</code> stores system administration binaries.</p>
+<ul>
+  <li>Similiar to <code class="language-plaintext highlighter-rouge">/bin</code>, <code class="language-plaintext highlighter-rouge">/sbin</code> contains binary excutables necessary for system administration.</li>
+  <li>Common sysadmin commands (iptables, fdisk, ifconfig) are stored here.</li>
+</ul>
+
+<h2 id="boot">/boot</h2>
+<p><code class="language-plaintext highlighter-rouge">/boot</code> stores boot loader files. The software responsible for booting a computer is in this directory.</p>
+<ul>
+  <li>Kernel initrd, vmlinux, grub.</li>
+</ul>
+
+<h2 id="dev">/dev</h2>
+<p><code class="language-plaintext highlighter-rouge">/dev</code> include device files. A device file is an interface to a device driver that appears as an ordinary file.</p>
+<ul>
+  <li>Any device attached to the system, like USB, is included here.</li>
+</ul>
+
+<h2 id="etc">/etc</h2>
+<p><code class="language-plaintext highlighter-rouge">/etc</code> contains configuration files required by all programs.</p>
+<ul>
+  <li>For example, the configuration files for running the popular web server Apache would be here.</li>
+  <li><code class="language-plaintext highlighter-rouge">/etc</code> also contains startup and shutdown shell script used to start/stop programs.</li>
+</ul>
+
+<h2 id="home">/home</h2>
+<p><code class="language-plaintext highlighter-rouge">/home</code> is users’ home directories, not root.</p>
+<ul>
+  <li>Home directories for user accounts store personal files for them (Photos, Documents, Videos).</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">home/john</code> is the home directory for the user john.</li>
+</ul>
+
+<h2 id="lib-lib32-lib64-libx32">/lib /lib32 /lib64 /libx32</h2>
+<p><code class="language-plaintext highlighter-rouge">/lib</code> stores libraries essential for the binaries in <code class="language-plaintext highlighter-rouge">/bin</code> and <code class="language-plaintext highlighter-rouge">/sbin</code></p>
+<ul>
+  <li>Contains kernel modules and share images needed to boot the system.</li>
+  <li>Identifiable through the filename extension <code class="language-plaintext highlighter-rouge">*.so</code>.</li>
+</ul>
+
+<h2 id="lostfound">/lost+found</h2>
+<p>Files appearing in <code class="language-plaintext highlighter-rouge">/lost+found</code> are typically unlinked (i.e their name had been erased) but still opened by some process (so the data wasn’t erased yet) when the system halted suddenly (kernel panic or power failure).</p>
+
+<p>Files can also appear in <code class="language-plaintext highlighter-rouge">/lost+found</code> becuase the file system experienced a software or hardware bug. In such case, the directory serves a way for the user to find a file that was lost but salvaged by the system repair.</p>
+
+<p>tldr - You’ll find recovered bits of file here.</p>
+
+<h2 id="media">/media</h2>
+<p><code class="language-plaintext highlighter-rouge">/media</code> is a mount directory for removable media such as CD-ROMs and USB Flash Drives.</p>
+<ul>
+  <li>Example: <code class="language-plaintext highlighter-rouge">/media/cdrom</code> for CD-ROM.</li>
+</ul>
+
+<h2 id="mnt">/mnt</h2>
+<p><code class="language-plaintext highlighter-rouge">/mnt</code> is a temporary mount directory for mounting filesystems.</p>
+
+<h2 id="opt">/opt</h2>
+<p><code class="language-plaintext highlighter-rouge">/opt</code> stores add-on application software packages.</p>
+<ul>
+  <li>Packages from individual vendors (i.e Google Chrome by Google).</li>
+</ul>
+
+<h2 id="proc">/proc</h2>
+<p><code class="language-plaintext highlighter-rouge">/proc</code> is a virtual filesystem created temporarily when the system boots and dissolves when the system is shut down. <code class="language-plaintext highlighter-rouge">/proc</code> provides system and process information as special files. The figure below is a snapshot of <code class="language-plaintext highlighter-rouge">/proc</code> from my Ubuntu machine.</p>
+
+<p><img src="photos/FHS/FHS-proc.png" alt=" Proc Snapshot" /></p>
+
+<p>Listing out <code class="language-plaintext highlighter-rouge">/proc</code> content with <code class="language-plaintext highlighter-rouge">ls -l</code> displays each PID (Process Identifier) for every process currently running.</p>
+
+<p>Information about a running process is in a directory named after their PID and shown in a file. For example, information about systemd’s process status is in the directory <code class="language-plaintext highlighter-rouge">/proc/1</code> (systemd PID) and shown in the file <code class="language-plaintext highlighter-rouge">/proc/1/status</code>.</p>
+
+<p>Unlike processes, system resource files are not stored in subdirectories. All are found in <code class="language-plaintext highlighter-rouge">/proc</code>. For example, information about installed cryptographic ciphers used by the Kernel is found in the file <code class="language-plaintext highlighter-rouge">/proc/crypto</code>.</p>
+
+<h2 id="root">/root</h2>
+<p><code class="language-plaintext highlighter-rouge">/root</code> is the root user’s home directory.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/root</code> is distinct from <code class="language-plaintext highlighter-rouge">/</code>, which is the system root directory.</li>
+</ul>
+
+<h2 id="run">/run</h2>
+<p><code class="language-plaintext highlighter-rouge">/run</code> stores run time information operated by processes that start early in the boot procedure. <code class="language-plaintext highlighter-rouge">/run</code> operates in RAM, meaning that everything in it is gone when the system is rebooted or shut down.</p>
+
+<h2 id="snap">/snap</h2>
+<p><code class="language-plaintext highlighter-rouge">/snap</code> is where packages installed from the package manager Snap are stored.</p>
+<ul>
+  <li>Snap is natively installed on desktop versions of Ubuntu.</li>
+  <li>Snap packages are self-contained applications that run differently than regular packages.</li>
+</ul>
+
+<h2 id="srv">/srv</h2>
+<p><code class="language-plaintext highlighter-rouge">/srv</code> stores service data.</p>
+<ul>
+  <li>Services like FTP and Apache would store files inside <code class="language-plaintext highlighter-rouge">/srv</code> for external users to have access. This allows for better security since <code class="language-plaintext highlighter-rouge">/srv</code> is at the root of the drive and is easily mountable from another hard drive.</li>
+</ul>
+
+<h2 id="sys">/sys</h2>
+<p><code class="language-plaintext highlighter-rouge">/sys</code> contains information about devices, drivers, and some kernel features.</p>
+<ul>
+  <li>Similar to <code class="language-plaintext highlighter-rouge">/run</code>, <code class="language-plaintext highlighter-rouge">/sys</code> is not written on the disk. It is created each time the system boots up.</li>
+</ul>
+
+<h2 id="tmp">/tmp</h2>
+<p><code class="language-plaintext highlighter-rouge">/tmp</code> is a diectory for temporary files.</p>
+<ul>
+  <li>Files are often not preserved between system reboots.</li>
+  <li>Word processors temporarily store files here when a user is writing a document in case the program crashes or the user forgets to save.</li>
+</ul>
+
+<h2 id="usr">/usr</h2>
+<p><code class="language-plaintext highlighter-rouge">/usr</code> contains the majority of user utilities and applications.</p>
+<ul>
+  <li>The data inside<code class="language-plaintext highlighter-rouge">/usr</code> are not essential to the system as they are only used by users and not the system.</li>
+  <li>For example,  non-essentials command binaries (not needed in single-user-mode) is found in <code class="language-plaintext highlighter-rouge">/usr/bin</code></li>
+</ul>
+:ET
