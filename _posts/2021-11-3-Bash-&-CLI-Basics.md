@@ -15,6 +15,7 @@ Before diving into Bash specifics, here is a quick summary of some useful Unix-l
 - ```find``` search for files within a filesystem. 
 - ```file``` determine file type.
 - ```sort``` sort lines in a text file.
+- ```date``` print or set the system date and time.
 
 ## Special Characters
 Bash evaluates some characters to have a non-literal meaning when typed in the command line. These characters carry out a *special* instruction in the shell are called **special characters**, and can modify the function of a command.  
@@ -58,7 +59,7 @@ Matches all characters with the string *.flac* after ```*```
 
 The wildcard character ``` * ``` is often used in file searches so the full name does not need to be typed.
 
-### ```<```  Input Redirection
+### ```<```  Input Operator
 The input redirector pulls data in a stream from a given source. Usually, programs receive their data from the keyboard. However, data can be pulled from another source, like a file.
 
 Let's use the ```sort``` command as an example. The file ```fruits.txt``` contains the following lines:
@@ -74,7 +75,17 @@ Notice the fruit is not in alphabetical order. A user can pull the data from the
 
 ![input-redirect](photos/Bash&CLI/input-redirect.png)
 
+### ``` < ``` Output Operator
+The output redirector ``` > ``` redirects a program's output to somewhere else. In this case, I'm going to redirect the results to a file named time.txt.
 
+![output-redirect](photos/Bash&CLI/output-redirect.png)
+
+Please note, the ``` > ``` redirector outputs overwrites any existing data in a file. You can use the ``` >> ``` redirector to append any new changes to a file.
+
+### ``` | ``` Pipe Operator
+The pipe operator ``` | ``` is one of my favorite operators. The pipe takes the output of the first command and makes it the input of the second command. Let's say a user wants to list all directories and files in the ``` /etc ``` directory. They know that's going to be a long list and that most of the output will scroll off the top of the screen. The ``` less ``` command will break the output into pages, and the user can scroll upward or downward through the results.   
+
+![Pipe](photos/Bash&CLI/pipe.png)
 
 
 
@@ -105,3 +116,32 @@ $ ls -la /tmp /var/tmp
 parameter1= /tmp
 parameter2= /var/tmp
 ```
+
+## Manual Pages
+Linux has built-in documentation for the majority of commands installed on the system. Descriptions about the command's use case, operation, and functionality are all found in the manual pages. To pull up the manual pages for a command, simply type ``` man ``` in the CLI and the command's name. 
+
+Pull up the manual pages for ```grep```.
+
+![man-grep-cli](photos/Bash&CLI/man-grep-cli.png)
+
+The following is then displayed.
+
+![man-grep](photos/Bash&CLI/man-grep.png)
+
+### SYNOPSIS Header
+The header SYNOPSIS tells you how to run the command. In this example 
+``` grep ``` takes in two mandatory arguments, the pattern to match by, and the file to search in. ```grep``` also takes in options, but remember, **options are optional**. They are not required to run the command. 
+
+### DESCRIPTION Header
+The header DESCRIPTION is self-explanatory, providing a brief description of the command and how to use it.
+
+### OPTIONS Header
+The header OPTIONS lists and describes all the available options for the commands. Knowing a command's options is important to extend its functionality. 
+
+### Navigation & Help
+Navigating the manual pages is easy.  Use the arrows keys to scroll up and down, or if you are a vim user, use j and k. The forward slash ```/``` is used to search for keywords. Use n and N to shift through search matches. 
+
+Funny enough, there are manual pages for the manual pages. Press h to pull up documentation for the program ```man```. 
+![man-help](photos/Bash&CLI/help-man.png)
+
+Once done browsing the manual pages, press q to exit the program.
