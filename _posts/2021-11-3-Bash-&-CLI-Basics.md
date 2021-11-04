@@ -14,6 +14,45 @@ Before diving into Bash specifics, here is a quick summary of some useful Unix-l
 - ``` grep ``` search for patterns in a file using regex. 
 - ``` find ``` search for files within a filesystem. 
 - ``` file ``` determine file type.
+- ``` sort ``` sort lines in a text file.
+
+## Special Characters
+Bash evaluates some characters to have a non-literal meaning when typed in the command line. These characters carry out a *special* instruction in the shell are called **special characters**, and can modify the function of a command.  
+
+### ``` . ``` Home Directory
+A period ```. ``` represents the current directory. Typically periods are used in relative and absolute paths. For example, if a user wanted to run a script from the current directory, they would run the file like this:
+
+```
+./script.sh
+```
+This tells Bash to look in the current directory for the ``` script.sh ``` file. 
+### ``` .. ``` Parent Directory
+The double period or double dot ``` .. ``` represents the parent directory of the current directory. ``` .. ``` is used to move up one level in the directory tree.
+
+```
+cd ..
+```
+![Double Dot](photos/Bash&CLI/doubledot.png)
+
+### ``` / ``` Path Separator
+Forward slash ``` / ```, often called slash, separates the directories in a pathname. Used for absolute and relative paths. 
+
+![Slash 1](photos/Bash&CLI/slash.png)
+
+### ``` * ``` Character Sequence Wildcard
+The use case of the wildcard ``` * ``` stands for any *sequence* of characters, including *no characters*. Consider the following :
+```
+ls track*
+```
+
+This matches all of the following:
+![ls-1](photos/Bash&CLI/ls-1.png)
+
+The wildcard matches any file with the string before it. The wildcard can also match any file with the string after it.
+```
+ls *.flac
+```
+![Slash 2](photos/Bash&CLI/slash-2.png)
 
 ## Arguments, Options and Parameters
 A *command* is split into an array of strings named **arguments**. Normally, argument 0 is the command name. Argument 1 is the first element following argument 0, and so on.
