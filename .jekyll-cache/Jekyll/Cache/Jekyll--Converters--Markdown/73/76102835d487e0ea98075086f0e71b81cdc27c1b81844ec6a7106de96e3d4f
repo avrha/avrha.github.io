@@ -1,0 +1,74 @@
+I"�<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
+
+<h2 id="command-overview">Command Overview</h2>
+<p>Before diving into Bash specifics, here is a quick summary of some useful Unix-like commands.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pwd</code> prints the working directory. (The directory the user is currently in).</li>
+  <li><code class="language-plaintext highlighter-rouge">ls</code> lists directory contents.</li>
+  <li><code class="language-plaintext highlighter-rouge">cd</code> change directory, used to move around the filesystem.</li>
+  <li><code class="language-plaintext highlighter-rouge">cat</code> concatenate files and print standard output (stdout).</li>
+  <li><code class="language-plaintext highlighter-rouge">grep</code> search for patterns in a file using regex.</li>
+  <li><code class="language-plaintext highlighter-rouge">find</code> search for files within a filesystem.</li>
+  <li><code class="language-plaintext highlighter-rouge">file</code> determine file type.</li>
+  <li><code class="language-plaintext highlighter-rouge">sort</code> sort lines in a text file.</li>
+</ul>
+
+<h2 id="special-characters">Special Characters</h2>
+<p>Bash evaluates some characters to have a non-literal meaning when typed in the command line. These characters carry out a <em>special</em> instruction in the shell are called <strong>special characters</strong>, and can modify the function of a command.</p>
+
+<h3 id="-current-directory"><code class="language-plaintext highlighter-rouge">.</code> Current Directory</h3>
+<p>A period <code class="language-plaintext highlighter-rouge">.</code> represents the current directory. Typically periods are used in relative and absolute paths. For example, if a user wanted to run a script from the current directory, they would run the file like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./script.sh
+</code></pre></div></div>
+<p>This tells Bash to look in the current directory for the <code class="language-plaintext highlighter-rouge">script.sh</code> file.</p>
+<h3 id="-parent-directory"><code class="language-plaintext highlighter-rouge">..</code> Parent Directory</h3>
+<p>The double period or double dot <code class="language-plaintext highlighter-rouge">..</code> represents the parent directory of the current directory. <code class="language-plaintext highlighter-rouge">..</code> is used to move up one level in the directory tree.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ..
+</code></pre></div></div>
+<p><img src="photos/Bash&amp;CLI/doubledot.png" alt="Double Dot" /></p>
+
+<h3 id="-path-separator"><code class="language-plaintext highlighter-rouge">/</code> Path Separator</h3>
+<p>Forward slash <code class="language-plaintext highlighter-rouge">/</code>, often called slash, separates the directories in a pathname. Used for absolute and relative paths.</p>
+
+<p><img src="photos/Bash&amp;CLI/slash.png" alt="Slash 1" /></p>
+
+<h3 id="-character-sequence-wildcard"><code class="language-plaintext highlighter-rouge">*</code> Character Sequence Wildcard</h3>
+<p>The wildcard <code class="language-plaintext highlighter-rouge">*</code> matches any number of characters based upon its placement in a string. Consider the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls track*
+</code></pre></div></div>
+
+<p>This matches all characters with the string <code class="language-plaintext highlighter-rouge">track</code> after it:
+<img src="photos/Bash&amp;CLI/ls-1.png" alt="ls-1" /></p>
+
+<p>The wildcard matches any file with the string before it. The wildcard can also match any file with the string after it.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls *.flac
+</code></pre></div></div>
+<p><img src="photos/Bash&amp;CLI/slash-2.png" alt="Slash 2" /></p>
+
+<h2 id="arguments-options-and-parameters">Arguments, Options and Parameters</h2>
+<p>A <em>command</em> is split into an array of strings named <strong>arguments</strong>. Normally, argument 0 is the command name. Argument 1 is the first element following argument 0, and so on.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#long list all files in /tmp and /var/tmp
+$ ls -la /tmp /var/tmp 
+arg0 = ls
+arg1 = -la
+arg2 = /tmp
+arg3 = /var/tmp
+</code></pre></div></div>
+
+<p>An <strong>option</strong> is a type of <em>argument</em> modifying the behavior of a <em>command</em>. For example <code class="language-plaintext highlighter-rouge">-l</code> commonly means “long”, <code class="language-plaintext highlighter-rouge">-a</code> means “all”. <code class="language-plaintext highlighter-rouge">-la</code> are <em>two</em> options combined in a <em>single</em> argument.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -la /tmp /var/tmp
+option1= -l
+option2= -a
+</code></pre></div></div>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Parameter#Computing">parameter</a> is an argument that provides information to either the <em>command</em> or one of its options. For example in <code class="language-plaintext highlighter-rouge">-o file</code>, <em>file</em> is the parameter of the <code class="language-plaintext highlighter-rouge">-o</code> option. Unlike options, parameters are not hardcoded. Bash does this so users are free to use whatever string suits their needs.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -la /tmp /var/tmp
+parameter1= /tmp
+parameter2= /var/tmp
+</code></pre></div></div>
+:ET

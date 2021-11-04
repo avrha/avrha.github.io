@@ -19,7 +19,7 @@ Before diving into Bash specifics, here is a quick summary of some useful Unix-l
 ## Special Characters
 Bash evaluates some characters to have a non-literal meaning when typed in the command line. These characters carry out a *special* instruction in the shell are called **special characters**, and can modify the function of a command.  
 
-### ``` . ``` Home Directory
+### ``` . ``` Current Directory
 A period ```. ``` represents the current directory. Typically periods are used in relative and absolute paths. For example, if a user wanted to run a script from the current directory, they would run the file like this:
 
 ```
@@ -35,24 +35,27 @@ cd ..
 ![Double Dot](photos/Bash&CLI/doubledot.png)
 
 ### ``` / ``` Path Separator
-Forward slash ``` / ```, often called slash, separates the directories in a pathname. Used for absolute and relative paths. 
+Forward slash ``` / ```, often called slash, separates the directories in a pathname.
 
 ![Slash 1](photos/Bash&CLI/slash.png)
 
-### ``` * ``` Character Sequence Wildcard
-The use case of the wildcard ``` * ``` stands for any *sequence* of characters, including *no characters*. Consider the following :
+### ``` * ``` Wildcard
+The wildcard ``` * ``` matches any number of characters based upon its placement in a string. Consider the following:
 ```
 ls track*
 ```
 
-This matches all of the following:
+Matches all characters with the string *track* before ``` * ```
 ![ls-1](photos/Bash&CLI/ls-1.png)
 
-The wildcard matches any file with the string before it. The wildcard can also match any file with the string after it.
+
 ```
 ls *.flac
 ```
+Matches all characters with the string *.flac* after ``` * ```
 ![Slash 2](photos/Bash&CLI/slash-2.png)
+
+The wildcard character ``` * ``` is often used in file searches so the full name does not need to be typed.
 
 ## Arguments, Options and Parameters
 A *command* is split into an array of strings named **arguments**. Normally, argument 0 is the command name. Argument 1 is the first element following argument 0, and so on.
