@@ -1,4 +1,4 @@
-I"�$<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
+I"+<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
 
 <h2 id="command-overview">Command Overview</h2>
 <p>Before diving into Bash specifics, here is a quick summary of some useful Unix-like commands.</p>
@@ -11,6 +11,7 @@
   <li><code class="language-plaintext highlighter-rouge">find</code> search for files within a filesystem.</li>
   <li><code class="language-plaintext highlighter-rouge">file</code> determine file type.</li>
   <li><code class="language-plaintext highlighter-rouge">sort</code> sort lines in a text file.</li>
+  <li><code class="language-plaintext highlighter-rouge">date</code> print or set the system date and time.</li>
 </ul>
 
 <h2 id="special-characters">Special Characters</h2>
@@ -51,7 +52,7 @@
 
 <p>The wildcard character <code class="language-plaintext highlighter-rouge">*</code> is often used in file searches so the full name does not need to be typed.</p>
 
-<h3 id="--input-redirection"><code class="language-plaintext highlighter-rouge">&lt;</code>  Input Redirection</h3>
+<h3 id="--input-operator"><code class="language-plaintext highlighter-rouge">&lt;</code>  Input Operator</h3>
 <p>The input redirector pulls data in a stream from a given source. Usually, programs receive their data from the keyboard. However, data can be pulled from another source, like a file.</p>
 
 <p>Let’s use the <code class="language-plaintext highlighter-rouge">sort</code> command as an example. The file <code class="language-plaintext highlighter-rouge">fruits.txt</code> contains the following lines:</p>
@@ -66,7 +67,7 @@ banana
 
 <p><img src="photos/Bash&amp;CLI/input-redirect.png" alt="input-redirect" /></p>
 
-<h3 id="-output-redirection"><code class="language-plaintext highlighter-rouge">&lt;</code> Output Redirection</h3>
+<h3 id="-output-operator"><code class="language-plaintext highlighter-rouge">&lt;</code> Output Operator</h3>
 <p>The output redirector <code class="language-plaintext highlighter-rouge">&gt;</code> redirects a program’s output to somewhere else. In this case, I’m going to redirect the results to a file named time.txt.</p>
 
 <p><img src="photos/Bash&amp;CLI/output-redirect.png" alt="output-redirect" /></p>
@@ -113,4 +114,23 @@ parameter2= /var/tmp
 <p>The following is then displayed.</p>
 
 <p><img src="photos/Bash&amp;CLI/man-grep.png" alt="man-grep" /></p>
+
+<h3 id="synopsis-header">SYNOPSIS Header</h3>
+<p>The header SYNOPSIS tells you how to run the command. In this example
+<code class="language-plaintext highlighter-rouge">grep</code> takes in two mandatory arguments, the pattern to match by, and the file to search in. <code class="language-plaintext highlighter-rouge">grep</code> also takes in options, but remember, <strong>options are optional</strong>. They are not required to run the command.</p>
+
+<h3 id="description-header">DESCRIPTION Header</h3>
+<p>The header DESCRIPTION is self-explanatory, providing a brief description of the command and how to use it.</p>
+
+<h3 id="options-header">OPTIONS Header</h3>
+<p>The header OPTIONS lists and describes all the available options for the commands. Knowing a command’s options is important to extend its functionality.</p>
+
+<h3 id="navigation--help">Navigation &amp; Help</h3>
+<p>Navigating the manual pages is easy.  Use the arrows keys to scroll up and down, or if you are a vim user, use j and k. The forward slash <code class="language-plaintext highlighter-rouge">/</code> is used to search for keywords. Use n and N to shift through search matches.</p>
+
+<p>Funny enough, there are manual pages for the manual pages. Press h to pull up documentation for the program <code class="language-plaintext highlighter-rouge">man</code>.</p>
+
+<p><img src="photos/Bash&amp;CLI/help-man.png" alt="man-help" /></p>
+
+<p>Once done browsing the manual pages, press q to exit the program.</p>
 :ET

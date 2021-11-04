@@ -142,6 +142,7 @@ The header OPTIONS lists and describes all the available options for the command
 Navigating the manual pages is easy.  Use the arrows keys to scroll up and down, or if you are a vim user, use j and k. The forward slash ```/``` is used to search for keywords. Use n and N to shift through search matches. 
 
 Funny enough, there are manual pages for the manual pages. Press h to pull up documentation for the program ```man```. 
+
 ![man-help](photos/Bash&CLI/help-man.png)
 
 Once done browsing the manual pages, press q to exit the program.
