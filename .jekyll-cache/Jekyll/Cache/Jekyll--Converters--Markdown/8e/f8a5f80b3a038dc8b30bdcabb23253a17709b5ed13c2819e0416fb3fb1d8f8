@@ -1,0 +1,20 @@
+I"�<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
+
+<h2 id="command-overview">Command Overview</h2>
+<p>Before diving into Bash specifics, here is a quick summary of some useful Unix-like commands.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pwd</code> prints the working directory. (The directory the user is currently in).</li>
+  <li><code class="language-plaintext highlighter-rouge">ls</code> lists directory contents.</li>
+  <li><code class="language-plaintext highlighter-rouge">cd</code> change directory, used to move around the filesystem.</li>
+  <li><code class="language-plaintext highlighter-rouge">cat</code> concatenate files and print standard output (stdout).</li>
+  <li><code class="language-plaintext highlighter-rouge">grep</code> search for patterns in a file using regex.</li>
+  <li><code class="language-plaintext highlighter-rouge">find</code> search for files within a filesystem.</li>
+  <li><code class="language-plaintext highlighter-rouge">file</code> determine file type.</li>
+</ul>
+
+<h2 id="arguments">Arguments</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -la 
+
+
+</code></pre></div></div>
+:ET
