@@ -75,15 +75,15 @@ Notice the fruit is not in alphabetical order. A user can pull the data from the
 
 ![input-redirect](photos/Bash&CLI/input-redirect.png)
 
-### ``` < ``` Output Operator
-The output redirector ``` > ``` redirects a program's output to somewhere else. In this case, I'm going to redirect the results to a file named time.txt.
+### ```>``` Output Operator
+The output redirector ```>``` redirects a program's output to somewhere else. In this case, I'm going to redirect the results to a file named time.txt.
 
 ![output-redirect](photos/Bash&CLI/output-redirect.png)
 
-Please note, the ``` > ``` redirector outputs overwrites any existing data in a file. You can use the ``` >> ``` redirector to append any new changes to a file.
+Please note, the ```>``` redirector outputs overwrites any existing data in a file. You can use the ``` >> ``` redirector to append any new changes to a file.
 
-### ``` | ``` Pipe Operator
-The pipe operator ``` | ``` is one of my favorite operators. The pipe takes the output of the first command and makes it the input of the second command. Let's say a user wants to list all directories and files in the ``` /etc ``` directory. They know that's going to be a long list and that most of the output will scroll off the top of the screen. The ``` less ``` command will break the output into pages, and the user can scroll upward or downward through the results.   
+### ```|``` Pipe Operator
+The pipe operator ```|``` is one of my favorite operators. The pipe takes the output of the first command and makes it the input of the second command. Let's say a user wants to list all directories and files in the ```/etc``` directory. They know that's going to be a long list and that most of the output will scroll off the top of the screen. The ```less``` command will break the output into pages, and the user can scroll upward or downward through the results.   
 
 ![Pipe](photos/Bash&CLI/pipe.png)
 
