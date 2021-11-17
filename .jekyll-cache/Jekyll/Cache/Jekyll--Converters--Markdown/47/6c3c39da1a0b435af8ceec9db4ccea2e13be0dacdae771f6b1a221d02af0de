@@ -1,0 +1,12 @@
+I"T<p>The Linux kernel is arguably the most important piece of software written in the age of computing. Conceived and created in 1991 by Linus Torvalds, it was adopted as the kernel for the GNU operating system, a free replacement for UNIX. Since then, Linus’ kernel has spawned numerous OS distributions commonly called Linux.</p>
+
+<h2 id="review-on-operating-systems">Review on Operating Systems</h2>
+<p>An operating system, abbreviated as OS, is software that supports a computer’s basic functions. Examples would be scheduling tasks, executing applications and controlling peripherals.</p>
+
+<p>Every general-purpose computer consists of the hardware, an operating system, system and application programs. The hardware consists of memory, CPU, ALU, I/O devices, peripheral devices and storage devices. System programs consist of compilers, loaders, editors, etc. The application program consists of business programs and database programs.</p>
+
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/os.png" alt="Computer System View" />
+<a href="https://www.geeksforgeeks.org/introduction-of-operating-system-set-1/?ref=lbp">Image and Document Source</a></p>
+
+<p>Every computer must have an operating system to run other programs. The OS coordinates the use of the hardware among the different system and application programs for various users.</p>
+:ET

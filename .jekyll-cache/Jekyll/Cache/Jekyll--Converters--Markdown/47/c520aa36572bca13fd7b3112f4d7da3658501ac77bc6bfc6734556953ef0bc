@@ -1,4 +1,4 @@
-I"+<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
+I"�*<p>Bash is the default Unix shell installed on the majority of Linux distributions. Like any other shell, Bash uses a command-line interface (CLI) so its users can utilize the operating system. Therefore, knowledge of Bash’s CLI is necessary for working with most Linux systems. This post covers the basics of Bash and the shell’s CLI.</p>
 
 <h2 id="command-overview">Command Overview</h2>
 <p>Before diving into Bash specifics, here is a quick summary of some useful Unix-like commands.</p>
@@ -67,12 +67,12 @@ banana
 
 <p><img src="photos/Bash&amp;CLI/input-redirect.png" alt="input-redirect" /></p>
 
-<h3 id="-output-operator"><code class="language-plaintext highlighter-rouge">&lt;</code> Output Operator</h3>
+<h3 id="-output-operator"><code class="language-plaintext highlighter-rouge">&gt;</code> Output Operator</h3>
 <p>The output redirector <code class="language-plaintext highlighter-rouge">&gt;</code> redirects a program’s output to somewhere else. In this case, I’m going to redirect the results to a file named time.txt.</p>
 
 <p><img src="photos/Bash&amp;CLI/output-redirect.png" alt="output-redirect" /></p>
 
-<p>Please note, the <code class="language-plaintext highlighter-rouge">&gt;</code> redirector outputs overwrites any existing data in a file. You can use the <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> redirector to append any new changes to a file.</p>
+<p>Please note, the <code class="language-plaintext highlighter-rouge">&gt;</code> redirector outputs overwrites any existing data in a file.</p>
 
 <h3 id="-pipe-operator"><code class="language-plaintext highlighter-rouge">|</code> Pipe Operator</h3>
 <p>The pipe operator <code class="language-plaintext highlighter-rouge">|</code> is one of my favorite operators. The pipe takes the output of the first command and makes it the input of the second command. Let’s say a user wants to list all directories and files in the <code class="language-plaintext highlighter-rouge">/etc</code> directory. They know that’s going to be a long list and that most of the output will scroll off the top of the screen. The <code class="language-plaintext highlighter-rouge">less</code> command will break the output into pages, and the user can scroll upward or downward through the results.</p>
