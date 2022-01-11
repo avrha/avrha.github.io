@@ -1,9 +1,9 @@
-I"Y	<p>The Linux kernel is arguably the most important piece of software written in the age of computing. Conceived and created in 1991 by Linus Torvalds, it was adopted as the kernel for the GNU operating system, a free replacement for UNIX. Since then, Linus’ kernel has spawned numerous OS distributions commonly called Linux.</p>
+I"s<p>The Linux kernel is arguably the most important piece of software written in the age of computing. Conceived and created in 1991 by Linus Torvalds, it was adopted as the kernel for the GNU operating system, a free replacement for UNIX. Since then, Linus’ kernel has spawned numerous OS distributions commonly called Linux.</p>
 
-<h2 id="review-on-operating-systems">Review on Operating Systems</h2>
-<p>An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. Simply, an OS supports a computer’s basic function.</p>
-
+<h2 id="overview-on-operating-systems">Overview on Operating Systems</h2>
 <p>A computer consists of hardware, an operating system and application programs. The hardware consists of the CPU, I/O, memory, etc. Application programs consist of software intended for the end user; business and database programs are examples.</p>
+
+<p>An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. Simply, an OS supports a computer’s basic function.</p>
 
 <p><img src="photos/Kernel-101/OS-Placement.png" alt="Computer System View" /></p>
 
@@ -25,8 +25,15 @@
 
 <p>The <strong>networking</strong> component consists of communication systems for sending and retrieving data between systems. The <strong>security</strong> component consists of hardcoded features to ensure all technologies are behaving properly. The <strong>user interface</strong> is a program, typically called the <strong>shell</strong>, that gives the user a means to interact with the system.</p>
 
+<h3 id="user-space-and-kernel-space">User Space and Kernel Space</h3>
+<p>An operating system segregates virtual memory into <strong>kernel space</strong> and <strong>user space</strong>. Primarily, this separation serves to provide memory and hardware protection from malware.</p>
+
+<p>Kernel space is reserved for running a privileged kernel, kernel extensions, and most device drivers. In contrast, user space is the memory area where application software and some drivers execute.</p>
+
+<p><img src="photos/Kernel-101/spaces.png" alt="User Space and Kernel Space" /></p>
+
+<p>System calls will be covered later. For now, understand operating systems segregate virtual memory into two parts.</p>
+
 <h3 id="user-mode-and-kernel-mode">User Mode and Kernel Mode</h3>
-
-<h4 id="user-mode">User Mode</h4>
-
+<p>A computer operates in two modes: user mode and kernel mode. When any application is running, the program is in user mode.</p>
 :ET
